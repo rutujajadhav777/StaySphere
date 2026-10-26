@@ -1,24 +1,58 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const Listing = require("./Models/listing.js");
+const path = require("path");
 
-
-const MONGO_URL = "mongodb://127.0.0.1:27017/test";
+const MONGO_URL = "mongodb://127.0.0.1:27017/StaySphere";
 main()
 .then(() => {
     console.log("connected to DB");
 })
-.catch(() => {
+.catch((err) => {
     console.log(err);
 });
 
 async function main() {
-    await mongoose.connect("MONGO_URL");
+    await mongoose.connect(MONGO_URL);
 } 
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
     res.send("root is working");
 });
+
+
+//Index route
+app.get("/listings", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("listings/index.ejs", {allListings});
+});
+
+// Show route
+app.get("/listings/:id", async(req,res) => {
+   let {id} = req.params; 
+   const listing = await Listing.findById(id);
+   res.render("listings/show.ejs", {listing});
+})
+
+// app.get("/testListing", async(req, res) => {
+//     let sampleListing = new Listing({
+//         title: "Daimond Villa",
+//         description: "By the city",
+//         price: 1200,
+//         location: "College Road, Nashik",
+//         country: "India",
+//     });
+//     await sampleListing.save();
+//     console.log("sample data has been saved");
+//     res.send("successful testing");
+// });
+
+
 
 app.listen(8080, () => {
     console.log("server is listening to port 8080");
