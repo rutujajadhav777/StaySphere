@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StaySphere</title>
-</head>
+<% layout("/layouts/boilerplate") -%>
 <body>
     <h1>Listing Details:</h1>
     <h3><%=listing.title%></h3>
@@ -14,5 +8,12 @@
         <li><b>Location:</b>&nbsp; &nbsp;<%= listing.location%></li>
         <li><b>Country:</b>&nbsp; &nbsp; <%= listing.country%></li>
     </ul>
+    <br/>
+    <a href="/listings/<%= listing._id %>/edit">Edit this listing</a>
+    <br><br>
+    <button><a href="/listings">Home</a></button>
+    <br><br>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+        <button>Delete this listing</button>
+    </form>
 </body>
-</html>
