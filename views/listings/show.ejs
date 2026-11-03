@@ -1,19 +1,31 @@
 <% layout("/layouts/boilerplate") -%>
-<body>
-    <h1>Listing Details:</h1>
-    <h3><%=listing.title%></h3>
-    <ul>
-        <li><b>Description:</b>&nbsp; &nbsp;<%= listing.description%></li>
-        <li><b>Price:</b>&nbsp; &nbsp; &#8377; <%= listing.price.toLocaleString("en-IN")%></li>
-        <li><b>Location:</b>&nbsp; &nbsp;<%= listing.location%></li>
-        <li><b>Country:</b>&nbsp; &nbsp; <%= listing.country%></li>
-    </ul>
-    <br/>
-    <a href="/listings/<%= listing._id %>/edit">Edit this listing</a>
-    <br><br>
-    <button><a href="/listings">Home</a></button>
-    <br><br>
-    <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
-        <button>Delete this listing</button>
-    </form>
-</body>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h1>Listing Details:</h1>
+    
+
+        <div class="card">
+            <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_img" style="height: 20rem">
+            <div class="card-body">
+                <h5 class="card-text">
+                    <b><%= listing.title %></b> <br>
+                </h5>
+            </div>
+        </div>
+
+        <ul>
+            <li><b>Description:</b>&nbsp; &nbsp;<%= listing.description%></li>
+            <li><b>Price:</b>&nbsp; &nbsp; &#8377; <%= listing.price.toLocaleString("en-IN")%>/ night</li>
+            <li><b>Location:</b>&nbsp; &nbsp;<%= listing.location%></li>
+            <li><b>Country:</b>&nbsp; &nbsp; <%= listing.country%></li>
+        </ul>
+        <br/>
+        <a href="/listings/<%= listing._id %>/edit">Edit this listing</a>
+        <br><br>
+        <button><a href="/listings">Home</a></button>
+        <br><br>
+        <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+            <button class="mb-3">Delete this listing</button>
+        </form>
+    </div>
+</div>

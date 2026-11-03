@@ -14,7 +14,7 @@ const listingSchema = new Schema({
         },
         url:{
             type:String,
-           default: "https://unsplash.com/photos/a-motel-sign-on-a-building-surrounded-by-green-trees-6YiBGJMb998",
+            default: "https://unsplash.com/photos/a-motel-sign-on-a-building-surrounded-by-green-trees-6YiBGJMb998",
             set: (v) => v === "" ? "https://unsplash.com/photos/a-motel-sign-on-a-building-surrounded-by-green-trees-6YiBGJMb998": v,
         },
     },
