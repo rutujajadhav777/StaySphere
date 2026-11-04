@@ -104,10 +104,19 @@ label{
 /* Edit button */
 .edit-btn{
    background-color: #fe424d !important;
-   border: none !important; 
+   border: none !important;
+   height: 2.5rem; 
+   width: 5rem !important;
 }
 
 /* Show page */
 .show-img{
     height: 30vh;
+}
+.btns{
+    display:flex;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
 }

@@ -14,8 +14,8 @@ const listingSchema = new Schema({
         },
         url:{
             type:String,
-            default: "https://unsplash.com/photos/a-motel-sign-on-a-building-surrounded-by-green-trees-6YiBGJMb998",
-            set: (v) => v === "" ? "https://unsplash.com/photos/a-motel-sign-on-a-building-surrounded-by-green-trees-6YiBGJMb998": v,
+            default: "https://images.unsplash.com/photo-1793559141197-6f3526020346?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+            set: (v) => v === "" ? "https://images.unsplash.com/photo-1793559141197-6f3526020346?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D": v,
         },
     },
     price: Number,
