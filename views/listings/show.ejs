@@ -4,7 +4,9 @@
         <h2 class="mb-4">Listing Details:</h2>
     </div>
     <div class="card col-6 offset-3 show-card">
-        <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_img" style="height: 20rem">
+        <div class="img-container">
+          <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_img" style="height:20rem">  
+        </div>
         <div class="card-body">
             <h5 class="card-text">
                 <b><%= listing.title %></b> <br><br>

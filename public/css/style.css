@@ -101,6 +101,18 @@ label{
     background-color: #fe424d !important;
     border: none !important;
 }
+
+/* form validation */ 
+.form-control.is-valid, 
+.was-validated .form-control:valid,
+.form-control.is-invalid, 
+.was-validated .form-control:invalid
+
+{
+    background-image: none !important;
+}
+
+
 /* Edit button */
 .edit-btn{
    background-color: #fe424d !important;
@@ -110,6 +122,8 @@ label{
 }
 
 /* Show page */
+
+
 .show-img{
     height: 30vh;
 }
@@ -120,3 +134,10 @@ label{
     padding-left: 0;
     padding-right: 0;
 }
+
+
+
+/* Error Styling */
+/* .theme-danger{
+    
+} */
